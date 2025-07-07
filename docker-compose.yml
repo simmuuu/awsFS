@@ -2,13 +2,10 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    image: simmuuu/awsfs:latest         
+    container_name: awsfs-app
     ports:
       - "3001:3001"
-    volumes:
-      - .:/app
-      - /app/node_modules
     environment:
       - NODE_ENV=development
-    stdin_open: true
-    tty: true
+    restart: always
